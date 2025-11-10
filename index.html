@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NovaSocial</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">NovaSocial</div>
+      <div id="user-bar" class="user-bar hidden">
+        <input id="search" type="text" placeholder="Search users..." />
+        <button id="logoutBtn" class="btn outline">Logout</button>
+      </div>
+    </header>
+
+    <main id="auth" class="auth">
+      <div class="card">
+        <h2>Welcome</h2>
+        <p>Create your account or sign in.</p>
+        <div class="tabs">
+          <button class="tab active" data-tab="login">Login</button>
+          <button class="tab" data-tab="register">Register</button>
+        </div>
+        <div id="login" class="panel active">
+          <input id="loginEmail" type="email" placeholder="Email" />
+          <input id="loginPassword" type="password" placeholder="Password" />
+          <button id="loginSubmit" class="btn primary">Login</button>
+        </div>
+        <div id="register" class="panel">
+          <input id="regUsername" type="text" placeholder="Username" />
+          <input id="regEmail" type="email" placeholder="Email" />
+          <input id="regPassword" type="password" placeholder="Password" />
+          <button id="registerSubmit" class="btn primary">Create Account</button>
+        </div>
+        <div id="authError" class="error"></div>
+      </div>
+    </main>
+
+    <main id="app" class="app hidden">
+      <section class="composer card">
+        <textarea id="postContent" rows="3" placeholder="Share something with your followers..."></textarea>
+        <button id="postSubmit" class="btn primary">Post</button>
+      </section>
+
+      <section id="feed" class="feed"></section>
+
+      <section id="profile" class="profile hidden">
+        <div class="card profile-card">
+          <div class="profile-header">
+            <img id="profileAvatar" class="avatar" src="" alt="avatar" />
+            <div>
+              <h2 id="profileUsername"></h2>
+              <div class="muted" id="profileCreated"></div>
+            </div>
+            <button id="followToggle" class="btn"></button>
+          </div>
+          <p id="profileBio"></p>
+          <div class="stats">
+            <div><strong id="statFollowers">0</strong> Followers</div>
+            <div><strong id="statFollowing">0</strong> Following</div>
+            <div><strong id="statPosts">0</strong> Posts</div>
+          </div>
+        </div>
+        <div id="profilePosts" class="feed"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
